@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "5.0.0",
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://dzuelu.github.io/factorio-blueprint-decoder",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "BUILD_PATH='./docs' react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
