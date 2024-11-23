@@ -21,6 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: Dzuelu/factorio-blueprint-decoder
+          ref: master
 
       - uses: actions/setup-node@v4
         with:
