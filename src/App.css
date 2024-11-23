@@ -15,4 +15,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  min-height: 60px;
+  height: 8vh;
+}
+
+#blueprint-contents {
+  width: 99.5%;
+  height: 90vh;
+  border: none;
 }
