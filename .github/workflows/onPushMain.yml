@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 20
 
+      - run: npm install
+        shell: sh
+
       - run: npm run build
         shell: sh
 
