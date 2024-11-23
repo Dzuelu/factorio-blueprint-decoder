@@ -8,8 +8,8 @@ on:
 
 env:
   CI: true
-  GIT_AUTHOR_NAME: Dzuelu
   GIT_AUTHOR_EMAIL: Dzuelu@users.noreply.github.com
+  GIT_AUTHOR_NAME: Dzuelu
 
 jobs:
   # TODO fix and then add tests run before deploy
@@ -21,6 +21,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      - run: |
+          git config --global user.email "$GIT_AUTHOR_EMAIL"
+          git config --global user.name "$GIT_AUTHOR_NAME"
+        shell: sh
 
       - run: npm install
         shell: sh
