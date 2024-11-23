@@ -6,6 +6,10 @@ on:
       - main
       - master
 
+concurrency: 
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
 env:
   CI: true
   GIT_AUTHOR_EMAIL: Dzuelu@users.noreply.github.com
