@@ -6,6 +6,11 @@ on:
       - main
       - master
 
+env:
+  CI: true
+  GIT_AUTHOR_NAME: Dzuelu
+  GIT_AUTHOR_EMAIL: Dzuelu@users.noreply.github.com
+
 jobs:
   # TODO fix and then add tests run before deploy
   deploy-gh-pages:
