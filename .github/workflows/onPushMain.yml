@@ -6,7 +6,7 @@ on:
       - main
       - master
 
-concurrency: 
+concurrency:
   group: ${{ github.ref_name }}
   cancel-in-progress: true
 
@@ -19,26 +19,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          repository: Dzuelu/factorio-blueprint-decoder
-          ref: master
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      - run: npm install -g yarn
+        shell: sh
+
       - name: Setup GIT
         run: |
           git config --local user.email "github-actions@users.noreply.github.com"
           git config --local user.name "github-actions"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Dzuelu/factorio-blueprint-decoder
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         shell: sh
 
-      - run: npm install
+      - run: yarn install
         shell: sh
 
-      - run: npm run build
+      - run: yarn lint
         shell: sh
 
-      - run: npm run deploy
+      # - run: yarn test
+      #   shell: sh
+
+      - run: yarn build
+        shell: sh
+
+      - run: yarn deploy
         shell: sh
